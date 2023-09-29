@@ -5,6 +5,19 @@ import urllib
 import numpy as np
 import tensorflow as tf
 
+# This should be made conditional for Intel Dev Cloud, already defined in Google Colab
+from IPython.core.magic import (register_line_magic, register_cell_magic,
+                                register_line_cell_magic)
+
+@register_line_magic
+def tensorflow_version(line):
+    "tensorflow_version"
+    return line
+
+# In an interactive session, we need to delete it after registration to avoid
+# name conflicts for automagic to work on line magics.
+del tensorflow_version
+
 from IPython.display import Audio
 
 
