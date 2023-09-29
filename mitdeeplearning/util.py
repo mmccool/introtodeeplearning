@@ -7,6 +7,7 @@ from IPython import display as ipythondisplay
 from string import Formatter
 
 # This should be made conditional for Intel Dev Cloud, already defined in Google Colab
+# Also... does not work.  Add to kernel?
 from IPython.core.magic import (register_line_magic)
 
 @register_line_magic
