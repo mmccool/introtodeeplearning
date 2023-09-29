@@ -79,9 +79,17 @@ def test_batch_func_next_step(func, args):
     print("[PASS] test_batch_func_next_step")
     return True
 
-def test_custom_dense_layer_output(y):
-    true_y = np.array([[0.2697859,  0.45750418, 0.66536945]],dtype='float32')
+def test_custom_dense_layer_output(func, args):
+    layer, x, y = func(*args)
+    # compute correct answer (inputs are random)
+    Wcheck = layer.W.numpy()
+    bcheck = layer.b.numpy()
+    zcheck = np.add(np.matmul(x_input.numpy(),Wcheck),bcheck)
+    ycheck = 1.0/(1.0+np.exp(-zcheck))
+    print("True y:",true_y)
+    # This is no longer correct
+    # true_y = np.array([[0.2697859,  0.45750418, 0.66536945]],dtype='float32')
     assert tf.shape(y).numpy().tolist() == list(true_y.shape), "[FAIL] output is of incorrect shape. expected {} but got {}".format(true_y.shape, y.numpy().shape)
-    np.testing.assert_almost_equal(y.numpy(), true_y, decimal=7, err_msg="[FAIL] output is of incorrect value. expected {} but got {}".format(y.numpy(), true_y), verbose=True)
+    np.testing.assert_almost_equal(y.numpy(), true_y, decimal=7, err_msg="[FAIL] output is of incorrect value. expected {} but got {}".format(true_y.numpy(), y.numpy()), verbose=True)
     print("[PASS] test_custom_dense_layer_output")
     return True
