@@ -23,7 +23,7 @@ if get_dist('tensorflow>='+tf_ver) is None and get_dist('tensorflow_gpu>='+tf_ve
 setup(
   name = 'mitdeeplearning',         # How you named your package folder (MyLib)
   packages = ['mitdeeplearning'],   # Chose the same as "name"
-  version = '0.3.0',      # Start with a small number and increase it with every change you make
+  version = '0.3.1',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Official software labs for MIT Introduction to Deep Learning (http://introtodeeplearning.com)',   # Give a short description about your library
   author = 'Alexander Amini',                   # Type in your name
