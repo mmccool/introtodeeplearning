@@ -6,8 +6,7 @@ import numpy as np
 import tensorflow as tf
 
 # This should be made conditional for Intel Dev Cloud, already defined in Google Colab
-from IPython.core.magic import (register_line_magic, register_cell_magic,
-                                register_line_cell_magic)
+from IPython.core.magic import (register_line_magic)
 
 @register_line_magic
 def tensorflow_version(line):
