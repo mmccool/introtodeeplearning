@@ -14,7 +14,7 @@ install_deps = [
     'tqdm',
     'gym',
     'matplotlib',
-    'python-opencl'
+    'opencv-python'
 ]
 tf_ver = '2.0.0a'
 if get_dist('tensorflow>='+tf_ver) is None and get_dist('tensorflow_gpu>='+tf_ver) is None:
