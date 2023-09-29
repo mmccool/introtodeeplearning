@@ -79,7 +79,7 @@ def test_batch_func_next_step(func, args):
     print("[PASS] test_batch_func_next_step")
     return True
 
-def test_custom_dense_layer_output(layer, x, y):
+def test_custom_dense_layer_output(layer, x_input, y):
     # compute correct answer (inputs are random)
     Wcheck = layer.W.numpy()
     bcheck = layer.b.numpy()
