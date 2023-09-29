@@ -84,7 +84,7 @@ def test_custom_dense_layer_output(layer, x_input, y):
     Wcheck = layer.W.numpy()
     bcheck = layer.b.numpy()
     zcheck = np.add(np.matmul(x_input.numpy(),Wcheck),bcheck)
-    ycheck = 1.0/(1.0+np.exp(-zcheck))
+    true_y = 1.0/(1.0+np.exp(-zcheck))
     print("True y:",true_y)
     # This is no longer correct
     # true_y = np.array([[0.2697859,  0.45750418, 0.66536945]],dtype='float32')
