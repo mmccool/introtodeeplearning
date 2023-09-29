@@ -89,6 +89,6 @@ def test_custom_dense_layer_output(layer, x_input, y):
     # This is no longer correct
     # true_y = np.array([[0.2697859,  0.45750418, 0.66536945]],dtype='float32')
     assert tf.shape(y).numpy().tolist() == list(true_y.shape), "[FAIL] output is of incorrect shape. expected {} but got {}".format(true_y.shape, y.numpy().shape)
-    np.testing.assert_almost_equal(y.numpy(), true_y, decimal=7, err_msg="[FAIL] output is of incorrect value. expected {} but got {}".format(true_y.numpy(), y.numpy()), verbose=True)
+    np.testing.assert_almost_equal(y.numpy(), true_y, decimal=7, err_msg="[FAIL] output is of incorrect value. expected {} but got {}".format(true_y, y.numpy()), verbose=True)
     print("[PASS] test_custom_dense_layer_output")
     return True
