@@ -42,7 +42,7 @@ pip uninstall mitdeeplearning
 Now log back out, then back in, and start a Jupyter server as described in the instructions.
 
 In the labs themselves, the pip command to install the `mitdeeplearning` package will do
-nothing since it's already installed above.  
+nothing since it's already installed above.
 You may also want to comment out the "magic function" starting with `%`.
 In Google Colab this is used to select the tensorflow version but we have also already
 done that as part of the conda environment activation above.
