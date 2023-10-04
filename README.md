@@ -7,13 +7,55 @@ MIT Introduction to Deep Learning software labs are designed to be completed at 
 
 ## Opening the labs in Google Colaboratory:
 
-The 2023 Introduction to Deep Learning labs will be run in Google's Colaboratory, a Jupyter notebook environment that runs entirely in the cloud, so you don't need to download anything. To run these labs, you must have a Google account.
+The 2023 Introduction to Deep Learning labs can be run in Google's Colaboratory, a Jupyter notebook environment that runs entirely in the cloud, so you don't need to download anything. To run these labs, you must have a Google account.
 
 On this Github repo, navigate to the lab folder you want to run (`lab1`, `lab2`, `lab3`) and open the appropriate python notebook (\*.ipynb). Click the "Run in Colab" link on the top of the lab. That's it!
 
-## Running the labs
-Now, to run the labs, open the Jupyter notebook on Colab. Navigate to the "Runtime" tab --> "Change runtime type". In the pop-up window, under "Runtime type" select "Python 3", and under "Hardware accelerator" select "GPU". Go through the notebooks and fill in the `#TODO` cells to get the code to compile for yourself!
+## Opening the labs in Intel Dev Cloud:
 
+The labs can also be run in Intel's Dev Cloud.
+Follow the [instructions to get access to the Intel Dev Cloud](https://github.com/bjodom/idc) 
+and then after logging into the system,
+run the following commands in your shell (on the head node is ok, the user files are shared),
+which will pull in a version of the files in this course adapted for Intel.  
+```bash
+git clone https://github.com/mmccool/introtodeeplearning.git
+python -m pip install ./introtodeeplearning
+```
+Then, add the following to the end of your `.bashrc`:
+```bash
+export PATH=\"$HOME/.local/bin:$PATH
+source /opt/intel/oneapi/setvars.sh
+export ONEAPI_DEVICE_SELECTOR="level_zero:gpu"
+conda activate tensorflow_xpu
+```
+This will force use of the Intel XPUs.
+You can leave out the conda activation and do it manually if you want but for this course this
+is what will be used.  You can also check the number and kind of available devices with the 
+`sycl-ls` command.
+
+Note: If you installed a previous version of these labs you may have to run the following command before
+doing the above:
+```bash
+pip uninstall mitdeeplearning
+```
+
+Now log back out, then back in, and start a Jupyter server as described in the instructions.
+
+In the labs themselves, the pip command to install the `mitdeeplearning` package will do
+nothing since it's already installed above.  
+You may also want to comment out the "magic function" starting with `%`.
+In Google Colab this is used to select the tensorflow version but we have also already
+done that as part of the conda environment activation above.
+
+## Running the labs
+Now, to run the labs, open the Jupyter notebook as described above. 
+
+On the Intel Dev Cloud, the above setup is used to select the XPU for execution.
+
+On Google Colab, navigate to the "Runtime" tab --> "Change runtime type". In the pop-up window, under "Runtime type" select "Python 3", and under "Hardware accelerator" select "GPU". 
+
+Go through the notebooks and fill in the `#TODO` cells to get the code to compile for yourself!
 
 ### MIT Deep Learning package
 You might notice that inside the labs we install the `mitdeeplearning` python package from the Python Package repository:
