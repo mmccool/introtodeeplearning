@@ -20,7 +20,7 @@ run the following commands in your shell (on the head node is ok, the user files
 which will pull in a version of the files in this course adapted for Intel.  
 ```bash
 git clone https://github.com/mmccool/introtodeeplearning.git
-python -m pip install ./introtodeeplearning
+pip install ./introtodeeplearning
 ```
 Then, add the following to the end of your `.bashrc`:
 ```bash
