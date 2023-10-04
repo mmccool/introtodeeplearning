@@ -27,7 +27,6 @@ Then, add the following to the end of your `.bashrc`:
 export PATH=\"$HOME/.local/bin:$PATH
 source /opt/intel/oneapi/setvars.sh
 export ONEAPI_DEVICE_SELECTOR="level_zero:gpu"
-conda activate tensorflow_xpu
 ```
 This will force use of the Intel XPUs.
 You can leave out the conda activation and do it manually if you want but for this course this
@@ -39,7 +38,8 @@ Note: If you installed a previous version of these labs (including by trying to 
 pip uninstall mitdeeplearning
 ```
 
-Now log back out, then back in, and start a Jupyter server as described in the instructions.
+Now log back out, then back in, activate the `tensorflow_xpu` conda environment
+and start a Jupyter server as described in the instructions.
 In the Jupyter web page, navigate to the lab folder you want to run (`lab1`, `lab2`, `lab3`) 
 and open the appropriate python notebook (\*.ipynb).
 
