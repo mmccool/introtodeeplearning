@@ -14,7 +14,7 @@ On this Github repo, navigate to the lab folder you want to run (`lab1`, `lab2`,
 ## Opening the labs in Intel Dev Cloud:
 
 The labs can also be run in Intel's Dev Cloud.
-Follow the [instructions to get access to the Intel Dev Cloud](https://github.com/bjodom/idc) 
+Follow the [instructions to get access to the Intel Dev Cloud](https://tinyurl.com/ReadmeIDC)  (also available [here](https://github.com/bjodom/idc)).
 and then after logging into the system,
 run the following commands in your shell (on the head node is ok, the user files are shared),
 which will pull in a version of the files in this course adapted for Intel.  
