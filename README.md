@@ -34,8 +34,7 @@ You can leave out the conda activation and do it manually if you want but for th
 is what will be used.  You can also check the number and kind of available devices with the 
 `sycl-ls` command.
 
-Note: If you installed a previous version of these labs you may have to run the following command before
-doing the above:
+Note: If you installed a previous version of these labs (including by trying to step through the labs before setting up from the alternative repo above) you may have to run the following command first to clean out the old install:
 ```bash
 pip uninstall mitdeeplearning
 ```
