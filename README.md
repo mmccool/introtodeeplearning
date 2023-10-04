@@ -40,6 +40,8 @@ pip uninstall mitdeeplearning
 ```
 
 Now log back out, then back in, and start a Jupyter server as described in the instructions.
+In the Jupyter web page, navigate to the lab folder you want to run (`lab1`, `lab2`, `lab3`) 
+and open the appropriate python notebook (\*.ipynb).
 
 In the labs themselves, the pip command to install the `mitdeeplearning` package will do
 nothing since it's already installed above.
