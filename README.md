@@ -26,9 +26,12 @@ Then, add the following to the end of your `.bashrc`:
 ```bash
 export PATH=\"$HOME/.local/bin:$PATH
 source /opt/intel/oneapi/setvars.sh
-export ONEAPI_DEVICE_SELECTOR="level_zero:gpu"
+unset ONEAPI_DEVICE_SELECTOR
 conda activate tensorflow_xpu
 ```
+<!-- normally would use this
+export ONEAPI_DEVICE_SELECTOR="level_zero:gpu"
+-->
 This will force use of the Intel XPUs.
 You can leave out the conda activation and do it manually if you want but for this course this
 is what will be used.  You can also check the number and kind of available devices with the 
