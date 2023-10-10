@@ -12,8 +12,7 @@ The 2023 Introduction to Deep Learning labs can be run in Google's Colaboratory,
 On this Github repo, navigate to the lab folder you want to run (`lab1`, `lab2`, `lab3`) and open the appropriate python notebook (\*.ipynb). Click the "Run in Colab" link on the top of the lab. That's it!
 
 ## Opening the labs in Intel Dev Cloud:
-
-The labs can also be run in Intel's Dev Cloud.
+The labs can also be run in Intel's Dev Cloud, with some caveats.
 Follow the [instructions to get access to the Intel Dev Cloud](https://tinyurl.com/ReadmeIDC)  (also available [here](https://github.com/bjodom/idc)).
 and then after logging into the system,
 run the following commands in your shell (on the head node is ok, the user files are shared),
@@ -29,10 +28,14 @@ source /opt/intel/oneapi/setvars.sh
 unset ONEAPI_DEVICE_SELECTOR
 conda activate tensorflow_xpu
 ```
-<!-- normally would use this
+
+Unsetting `ONEAPI_DEVICE_SELECTOR` is a special case for Dev Cloud that gives a single
+random XPU out of several installed on the machine, so multiple people can share a single server.
+Note that in other contexts (e.g. a dedicated machine) you would use something like
+```base
 export ONEAPI_DEVICE_SELECTOR="level_zero:gpu"
--->
-This will force use of the Intel XPUs.
+```
+
 You can leave out the conda activation and do it manually if you want but for this course this
 is what will be used.  You can also check the number and kind of available devices with the 
 `sycl-ls` command.
@@ -51,6 +54,9 @@ nothing since it's already installed above.
 You may also want to comment out the "magic function" starting with `%`.
 In Google Colab this is used to select the tensorflow version but we have also already
 done that as part of the conda environment activation above.
+
+NOTE: Some things like audio playback require use of apt-get to install specific non-python packages which is
+not possible in the Dev Cloud as a user.  We are working on getting those pre-installed into the environment.
 
 ## Running the labs
 Now, to run the labs, open the Jupyter notebook as described above. 
