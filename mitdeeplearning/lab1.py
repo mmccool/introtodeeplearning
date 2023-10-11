@@ -35,7 +35,9 @@ def abc2wav(abc_file):
     return os.system(cmd)
 
 def play_wav(wav_file):
-    return Audio(wav_file)
+    # change this to a download link
+    # return Audio(wav_file)
+    print("Download the wav file: ",wav_file)
 
 def play_song(song):
     basename = save_song_to_abc(song)
