@@ -37,9 +37,8 @@ def abc2wav(file_basename):
 
 def abc2midi(file_basename):
     abc_file = "{}.abc".format(file_basename)
-    midi_file = "{}.mid".format(file_basename)
-    path_to_tool = os.path.join(cwd, 'bin', 'abc2midi')
-    cmd = "{} {} -o {}".format(path_to_tool, abc_file, midi_file)
+    path_to_tool = os.path.join(cwd, 'bin', 'abc2mid.sh')
+    cmd = "{} {}".format(path_to_tool, abc_file)
     return os.system(cmd)
 
 def play_wav(file_basename):
