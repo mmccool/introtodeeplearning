@@ -12,51 +12,8 @@ The 2023 Introduction to Deep Learning labs can be run in Google's Colaboratory,
 On this Github repo, navigate to the lab folder you want to run (`lab1`, `lab2`, `lab3`) and open the appropriate python notebook (\*.ipynb). Click the "Run in Colab" link on the top of the lab. That's it!
 
 ## Opening the labs in Intel Dev Cloud:
-The labs can also be run in Intel's Dev Cloud, with some caveats.
-Follow the [instructions to get access to the Intel Dev Cloud](https://tinyurl.com/ReadmeIDC)  (also available [here](https://github.com/bjodom/idc)).
-and then after logging into the system,
-run the following commands in your shell (on the head node is ok, the user files are shared),
-which will pull in a version of the files in this course adapted for Intel.  
-```bash
-git clone https://github.com/mmccool/introtodeeplearning.git
-pip install ./introtodeeplearning
-```
-Then, add the following to the end of your `.bashrc`:
-```bash
-export PATH=\"$HOME/.local/bin:$PATH
-source /opt/intel/oneapi/setvars.sh
-unset ONEAPI_DEVICE_SELECTOR
-conda activate tensorflow_xpu
-```
-
-Unsetting `ONEAPI_DEVICE_SELECTOR` is a special case for Dev Cloud that gives a single
-random XPU out of several installed on the machine, so multiple people can share a single server.
-Note that in other contexts (e.g. a dedicated machine) you would use something like
-```base
-export ONEAPI_DEVICE_SELECTOR="level_zero:gpu"
-```
-
-You can leave out the conda activation and do it manually if you want but for this course this
-is what will be used.  You can also check the number and kind of available devices with the 
-`sycl-ls` command.
-
-Note: If you installed a previous version of these labs (including by trying to step through the labs before setting up from the alternative repo above) you may have to run the following command first to clean out the old install:
-```bash
-pip uninstall mitdeeplearning
-```
-
-Now log back out, then back in, then start a Jupyter server as described in the instructions.
-In the Jupyter web page, navigate to the lab folder you want to run (`lab1`, `lab2`, `lab3`) 
-and open the appropriate python notebook (\*.ipynb).
-
-In the labs themselves, the pip command to install the `mitdeeplearning` package will do
-nothing since it's already installed above.
-You may also want to comment out the "magic function" starting with `%`.
-In Google Colab this is used to select the tensorflow version but we have also already
-done that as part of the conda environment activation above.
-
-NOTE: Some things like audio playback require use of apt-get to install specific non-python packages which is
-not possible in the Dev Cloud as a user.  We are working on getting those pre-installed into the environment.
+Please follow the instructions [here](https://github.com/intel-sandbox/ai.dse-dl-course.logistics).  This link is
+currently only available to Intel Employees.
 
 ## Running the labs
 Now, to run the labs, open the Jupyter notebook as described above. 
