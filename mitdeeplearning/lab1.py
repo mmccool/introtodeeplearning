@@ -29,21 +29,36 @@ def save_song_to_abc(song, filename="tmp"):
         f.write(song)
     return filename
 
-def abc2wav(abc_file):
+def abc2wav(file_basename):
+    abc_file = "{}.abc".format(file_basename)
     path_to_tool = os.path.join(cwd, 'bin', 'abc2wav')
     cmd = "{} {}".format(path_to_tool, abc_file)
     return os.system(cmd)
 
-def play_wav(wav_file):
+def abc2midi(file_basename):
+    abc_file = "{}.abc".format(file_basename)
+    midi_file = "{}.mid".format(file_basename)
+    path_to_tool = os.path.join(cwd, 'bin', 'abc2midi')
+    cmd = "{} {} -o {}".format(path_to_tool, abc_file, midi_file)
+    return os.system(cmd)
+
+def play_wav(file_basename):
+    wav_file = "{}.wav".format(file_basename)
     # change this to a download link
     # return Audio(wav_file)
     print("Download the wav file: ",wav_file)
 
+def play_midi(file_basename):
+    midi_file = "{}.mid".format(file_basename)
+    print("Download the midi file: ",midi_file)
+
 def play_song(song):
     basename = save_song_to_abc(song)
-    ret = abc2wav(basename+'.abc')
-    if ret == 0: #did not suceed
-        return play_wav(basename+'.wav')
+    # ret = abc2wav(basename)
+    ret = abc2midi(basename)
+    if ret == 0: # success
+        # return play_wav(basename)
+        return play_midi(basename)
     return None
 
 def play_generated_song(generated_text):
