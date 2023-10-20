@@ -2,5 +2,5 @@
 
 abcfile=$1
 suffix=${abcfile%.abc}
-abc2midi $abcfile -o "$suffix.mid"
+$HOME/.local/bin/abc2midi $abcfile -o "$suffix.mid"
 rm "$suffix.abc"
