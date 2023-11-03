@@ -51,8 +51,8 @@ def play_midi(file_basename):
     midi_file = "{}.mid".format(file_basename)
     print("Download the midi file: ",midi_file)
 
-def play_song(song):
-    basename = save_song_to_abc(song)
+def play_song(song, filename="tmp"):
+    basename = save_song_to_abc(song,filename)
     # ret = abc2wav(basename)
     ret = abc2midi(basename)
     if ret == 0: # success
