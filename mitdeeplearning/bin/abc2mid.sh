@@ -7,4 +7,4 @@ $HOME/.local/bin/abc2midi $abcfile -o "$suffix.mid" 2> "$suffix.err.txt"
 grep Error "$suffix.err.txt"
 code=$?
 # rm "$suffix.abc"
-exit [ "$code" -eq 0 ]
+exit [ $(("$code")) -eq 0 ]
