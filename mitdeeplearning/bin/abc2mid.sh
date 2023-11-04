@@ -7,6 +7,7 @@ $HOME/.local/bin/abc2midi $abcfile -o "$suffix.mid" > "$suffix.err.txt"
 # ... so scan output for any errors
 grep Error "$suffix.err.txt"
 code=$?
+# echo "grep Exit code $code"
 # rm "$suffix.abc"
 # note that grep returns 0 if there is a match, it succeeds if there is an error, so we have to negate it
 if [ "$code" -eq "0" ]
